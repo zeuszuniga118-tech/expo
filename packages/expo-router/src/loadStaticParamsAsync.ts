@@ -99,13 +99,16 @@ async function loadStaticParamsRecursive(
 
       return {
         ...route,
-        // TODO: Add a new field for this
         contextKey: generatedContextKey,
+        // Point to original dynamic route so we can re-use the loader from it
+        loaderContextKey: route.contextKey,
+        // Mark as a generated route.
+        generated: true,
         // Convert the dynamic route to a static route.
         dynamic: null,
         route: parsedRoute,
         children: dynamicChildren,
-      };
+      } satisfies RouteNode;
     })
   );
 

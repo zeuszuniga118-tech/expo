@@ -119,7 +119,8 @@ exports[`server-output express server requests has expected routes manifest entr
       "routeKeys": {},
     },
     {
-      "file": "./blog-ssg/abc.tsx",
+      "file": "./blog-ssg/[post].tsx",
+      "generated": true,
       "namedRegex": "^/blog\\-ssg/abc(?:/)?$",
       "page": "/blog-ssg/abc",
       "routeKeys": {},
